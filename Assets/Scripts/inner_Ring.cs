@@ -5,13 +5,18 @@ using UnityEditor;
 
 public class inner_Ring : MonoBehaviour
 {
+    private const bool V = false;
     public GameObject RING;
 
     private void Update()
     {
+        int numPlatforms = 6;
         if (Input.GetKeyDown(KeyCode.S))
         {
-            GameObject.Destroy(gameObject);
+            for(int i =0; i < numPlatforms; i++)
+            {
+                object p = gameObject.GetComponents<MeshRenderer>(V);
+            }
         }
         
     }
