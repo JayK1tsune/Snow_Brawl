@@ -9,8 +9,10 @@ public class inner_Ring : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.S))
-        RING.GetComponent<Animator>().Play("Ring down");
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            GameObject.Destroy(gameObject);
+        }
         
     }
 
