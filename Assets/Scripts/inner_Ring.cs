@@ -3,19 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public class inner_Ring : MonoBehaviour
+public class inner_Ring : Countdown
 {
-    private const bool V = false;
-    public GameObject RING;
+    GameObject[] platforms;
+  
 
-    private void Update()
+    void Start()
     {
-        int numPlatforms = 6;
-        if (Input.GetKeyDown(KeyCode.S))
+        platforms = GameObject.FindGameObjectsWithTag("Frist_Ring_Sections");
+
+ 
+    }
+    void update()
+    {
+
+        //if(Input.GetKeyDown(KeyCode.Space))
+        if (timer <= 200.00f && canCount)
         {
-            for(int i =0; i < numPlatforms; i++)
+            
+            foreach (GameObject g in platforms)
             {
-                object p = gameObject.GetComponents<MeshRenderer>(V);
+                
+                g.GetComponent<Rigidbody>().isKinematic = false;
             }
         }
         
